@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <!-- SEO básico actualizado -->
+  <meta name="description" content="RehabiMed - Centro Integral de Rehabilitación en Piedra Blanca, Rep. Dominicana. Terapia física, rehabilitación deportiva, postoperatoria y más.">
+  <meta name="keywords" content="rehabilitación, terapia física, Piedra Blanca, fisioterapia, RehabiMed, lesiones deportivas, postoperatorio">
+  <meta name="author" content="RehabiMed">
+  <title>RehabiMed | Centro de Rehabilitación en Piedra Blanca, RD</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🩺%3C/text%3E%3C/svg%3E">
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Estilos personalizados -->
+  <style>
+    :root {
+      --azul-profundo: #1e4a6b;
+      --azul-medio: #2c6a8c;
+      --azul-suave: #d9e6f2;
+      --verde-azulado: #7fa8a3;
+      --verde-claro: #cbdcd9;
+      --blanco: #ffffff;
+      --gris-claro: #f8f9fa;
+      --sombra-suave: 0 10px 30px rgba(30, 74, 107, 0.08);
+    }
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      color: #1a2e3b;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .bg-azul-suave {
+      background-color: var(--azul-suave);
+    }
+    .bg-verde-suave {
+      background-color: var(--verde-claro);
+    }
+    .text-azul-rehabimed {
+      color: var(--azul-profundo);
+    }
+    .btn-rehabimed {
+      background: var(--azul-medio);
+      color: white;
+      border-radius: 40px;
+      padding: 0.7rem 2rem;
+      font-weight: 600;
+      border: none;
+      box-shadow: 0 8px 16px rgba(44, 106, 140, 0.2);
+      transition: all 0.3s ease;
+    }
+    .btn-rehabimed:hover {
+      background: var(--azul-profundo);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px rgba(30, 74, 107, 0.25);
+      color: white;
+    }
+    .btn-outline-verde {
+      border: 2px solid var(--verde-azulado);
+      color: var(--azul-profundo);
+      border-radius: 40px;
+      padding: 0.6rem 1.8rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-outline-verde:hover {
+      background: var(--verde-azulado);
+      color: white;
+    }
+    .navbar {
+      background-color: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      padding: 0.8rem 0;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.9rem;
+      color: var(--azul-profundo) !important;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img, .navbar-brand i {
+      margin-right: 10px;
+    }
+    .navbar-brand span {
+      color: var(--azul-medio);
+      font-weight: 300;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #1e3b4f !important;
+      margin: 0 0.3rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--azul-medio) !important;
+    }
+    .hero-section {
+      background: linear-gradient(105deg, rgba(30,74,107,0.8) 0%, rgba(44,106,140,0.7) 100%), 
+                  url('https://images.pexels.com/photos/6111572/pexels-photo-6111572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+      min-height: 85vh;
+      border-radius: 0 0 60px 60px;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+    .service-card, .team-card, .testimonial-card, .blog-card {
+      border: none;
+      border-radius: 28px;
+      background: white;
+      box-shadow: var(--sombra-suave);
+      transition: transform 0.25s, box-shadow 0.3s;
+      height: 100%;
+    }
+    .service-card:hover, .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px rgba(30, 74, 107, 0.12);
+    }
+    .icon-circle {
+      width: 70px;
+      height: 70px;
+      background: var(--verde-claro);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      color: var(--azul-medio);
+      font-size: 2rem;
+    }
+    .testimonial-card {
+      background: var(--blanco);
+      padding: 2rem 1.5rem;
+    }
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--verde-azulado);
+    }
+    .social-icon {
+      color: var(--azul-profundo);
+      background: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 6px;
+      font-size: 1.4rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .social-icon:hover {
+      background: var(--azul-medio);
+      color: white;
+      transform: scale(1.1);
+    }
+    .footer {
+      background: var(--azul-profundo);
+      color: #ddd;
+      border-radius: 40px 40px 0 0;
+      padding: 2.5rem 0 1.5rem;
+    }
+    .footer a {
+      color: #cfecf7;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: white;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      transition: 0.3s;
+      border: 2px solid white;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      background: #1da851;
+      color: white;
+    }
+    .map-container {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--sombra-suave);
+      height: 280px;
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+      color: var(--azul-profundo);
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      width: 70px;
+      height: 4px;
+      background: var(--verde-azulado);
+      border-radius: 4px;
+    }
+    .form-control, .form-select {
+      border-radius: 20px;
+      padding: 0.7rem 1.2rem;
+      border: 1px solid #d4e2ec;
+      background: #fbfdff;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--azul-medio);
+      box-shadow: 0 0 0 3px rgba(44,106,140,0.2);
+    }
+    /* Logo en navbar */
+    .navbar-logo {
+      font-size: 2.2rem;
+      color: var(--azul-medio);
+      margin-right: 6px;
+    }
+    @media (max-width: 768px) {
+      .hero-section {
+        min-height: 70vh;
+        border-radius: 0 0 40px 40px;
+      }
+      .navbar-brand {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar con logo -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#inicio">
+      <i class="fas fa-heartbeat navbar-logo"></i> 
+      RehabiMed <span>· Centro Integral</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Sobre Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#citas">Citas</a></li>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+          <a href="#citas" class="btn btn-rehabimed px-4 py-2">Agendar cita</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero / Inicio -->
+<section id="inicio" class="hero-section" data-aos="fade-in">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7 text-white" data-aos="fade-right" data-aos-delay="100">
+        <h1 class="display-4 fw-bold mb-3">Recupera tu movilidad,<br> mejora tu vida</h1>
+        <p class="lead fs-4 mb-4 opacity-90">RehabiMed · Piedra Blanca, República Dominicana<br>Especialistas en terapia física, recuperación postoperatoria y deportiva.</p>
+        <a href="#citas" class="btn btn-light btn-lg rounded-pill px-5 py-3 fw-semibold shadow-sm me-3" style="color: var(--azul-profundo);">Agendar cita</a>
+        <a href="#servicios" class="btn btn-outline-light btn-lg rounded-pill px-5 py-3">Nuestros servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre Nosotros (año 2025) -->
+<section id="nosotros" class="py-5 bg-azul-suave">
+  <div class="container py-4">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h2 class="section-title">Sobre RehabiMed</h2>
+        <p class="fs-5 mt-4">Desde 2025, <strong>RehabiMed</strong> ha sido la respuesta a una necesidad sentida en Piedra Blanca. Nuestro centro integral combina tecnología avanzada, calidez humana y tratamientos basados en evidencia para devolverte la movilidad y calidad de vida sin tener que viajar largas distancias.</p>
+        <div class="row mt-4 g-4">
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-sm h-100 text-center">
+              <i class="fas fa-bullseye fa-2x mb-2" style="color: var(--azul-medio);"></i>
+              <h5>Misión</h5>
+              <p class="small">Brindar atención integral y personalizada para la recuperación de nuestros pacientes.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-sm h-100 text-center">
+              <i class="fas fa-eye fa-2x mb-2" style="color: var(--azul-medio);"></i>
+              <h5>Visión</h5>
+              <p class="small">Ser el centro de rehabilitación líder en República Dominicana.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-sm h-100 text-center">
+              <i class="fas fa-hand-holding-heart fa-2x mb-2" style="color: var(--azul-medio);"></i>
+              <h5>Valores</h5>
+              <p class="small">Empatía, compromiso, profesionalismo, respeto.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <img src="https://images.pexels.com/photos/7298894/pexels-photo-7298894.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fisioterapeuta ayudando a paciente" class="img-fluid rounded-5 shadow-lg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section id="servicios" class="py-5">
+  <div class="container py-3">
+    <div class="text-center" data-aos="fade-up">
+      <h2 class="section-title d-inline-block">Nuestros Servicios</h2>
+      <p class="lead mt-3 mb-5">Tratamientos especializados para tu bienestar físico</p>
+    </div>
+    <div class="row g-4">
+      <!-- Servicio 1 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="50">
+        <div class="service-card p-4 text-center">
+          <div class="icon-circle"><i class="fas fa-user-md"></i></div>
+          <h4>Terapia física</h4>
+          <p>Evaluación y tratamiento personalizado para aliviar dolor, mejorar movilidad y fortalecer.</p>
+        </div>
+      </div>
+      <!-- Servicio 2 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
+        <div class="service-card p-4 text-center">
+          <div class="icon-circle"><i class="fas fa-running"></i></div>
+          <h4>Rehabilitación deportiva</h4>
+          <p>Recuperación de lesiones deportivas con programas enfocados en alto rendimiento.</p>
+        </div>
+      </div>
+      <!-- Servicio 3 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="150">
+        <div class="service-card p-4 text-center">
+          <div class="icon-circle"><i class="fas fa-hands"></i></div>
+          <h4>Terapia ocupacional</h4>
+          <p>Reintegración en actividades diarias y laborales tras lesiones o cirugías.</p>
+        </div>
+      </div>
+      <!-- Servicio 4 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+        <div class="service-card p-4 text-center">
+          <div class="icon-circle"><i class="fas fa-spa"></i></div>
+          <h4>Masajes terapéuticos</h4>
+          <p>Alivio de tensión muscular, mejora de circulación y reducción del estrés.</p>
+        </div>
+      </div>
+      <!-- Servicio 5 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="250">
+        <div class="service-card p-4 text-center">
+          <div class="icon-circle"><i class="fas fa-procedures"></i></div>
+          <h4>Atención postoperatoria</h4>
+          <p>Rehabilitación especializada tras cirugías ortopédicas, neurológicas y más.</p>
+        </div>
+      </div>
+      <!-- Servicio 6 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="300">
+        <div class="service-card p-4 text-center">
+          <div class="icon-circle"><i class="fas fa-heartbeat"></i></div>
+          <h4>Valoración funcional</h4>
+          <p>Diagnóstico preciso con tecnología para un plan de recuperación efectivo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Equipo Profesional -->
+<section id="equipo" class="py-5 bg-verde-suave">
+  <div class="container py-3">
+    <div class="text-center" data-aos="fade-up">
+      <h2 class="section-title d-inline-block">Equipo Profesional</h2>
+      <p class="lead mt-3 mb-5">Fisioterapeutas certificados y apasionados por tu recuperación</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <!-- Miembro 1 -->
+      <div class="col-md-6 col-lg-3" data-aos="flip-left">
+        <div class="team-card p-4 text-center">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dra. Laura Méndez" class="avatar mb-3">
+          <h5 class="fw-bold">Dra. Laura Méndez</h5>
+          <p class="text-muted mb-1">Fisioterapeuta Deportiva</p>
+          <small>Especialista en lesiones de rodilla y hombro</small>
+        </div>
+      </div>
+      <!-- Miembro 2 -->
+      <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+        <div class="team-card p-4 text-center">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Carlos Peña" class="avatar mb-3">
+          <h5 class="fw-bold">Dr. Carlos Peña</h5>
+          <p class="text-muted mb-1">Terapeuta Ocupacional</p>
+          <small>Rehabilitación neurológica y post-ACV</small>
+        </div>
+      </div>
+      <!-- Miembro 3 -->
+      <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="200">
+        <div class="team-card p-4 text-center">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lic. Ana Rodríguez" class="avatar mb-3">
+          <h5 class="fw-bold">Lic. Ana Rodríguez</h5>
+          <p class="text-muted mb-1">Fisioterapeuta General</p>
+          <small>Especialista en terapia manual y postoperatorio</small>
+        </div>
+      </div>
+      <!-- Miembro 4 -->
+      <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="300">
+        <div class="team-card p-4 text-center">
+          <img src="https://randomuser.me/api/portraits/men/79.jpg" alt="Dr. José Ramírez" class="avatar mb-3">
+          <h5 class="fw-bold">Dr. José Ramírez</h5>
+          <p class="text-muted mb-1">Masoterapeuta</p>
+          <small>Masaje terapéutico y drenaje linfático</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonios (fotos diferentes y Luis con accidente) -->
+<section id="testimonios" class="py-5">
+  <div class="container py-3">
+    <div class="text-center" data-aos="fade-up">
+      <h2 class="section-title d-inline-block">Testimonios</h2>
+      <p class="lead mt-3 mb-5">Lo que dicen nuestros pacientes de Piedra Blanca</p>
+    </div>
+    <div class="row g-4">
+      <!-- Testimonio 1 (mujer 33) -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+        <div class="testimonial-card text-center">
+          <i class="fas fa-star text-warning mb-3"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <p class="fst-italic">"Antes tenía que ir a Bonao cada semana para mi terapia de rodilla. El viaje era agotador. Ahora con RehabiMed aquí en Piedra Blanca, recupero mi movilidad sin salir del pueblo. ¡Un alivio total!"</p>
+          <img src="https://randomuser.me/api/portraits/women/33.jpg" class="rounded-circle mt-2" width="55" height="55" alt="Maria">
+          <h6 class="mt-2 mb-0">María Fernández</h6>
+          <small class="text-muted">Paciente postoperatoria</small>
+        </div>
+      </div>
+      <!-- Testimonio 2 (hombre 22) - Accidente -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="testimonial-card text-center">
+          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <p class="fst-italic">"Tuve un accidente y el médico de Bonao me mandó 20 sesiones de terapia. Casi me da algo pensando en el gasto de pasaje. Gracias a Dios abrió RehabiMed. El mismo profesionalismo pero aquí cerquita."</p>
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" class="rounded-circle mt-2" width="55" height="55" alt="Luis">
+          <h6 class="mt-2 mb-0">Luis Jiménez</h6>
+          <small class="text-muted">Paciente por accidente</small>
+        </div>
+      </div>
+      <!-- Testimonio 3 (mujer 56) -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="testimonial-card text-center">
+          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <p class="fst-italic">"Llevar a mi mamá en silla de ruedas hasta Bonao era una odisea. Desde que llegó RehabiMed, ella recibe su terapia ocupacional a 5 minutos de casa. El cambio ha sido increíble."</p>
+          <img src="https://randomuser.me/api/portraits/women/56.jpg" class="rounded-circle mt-2" width="55" height="55" alt="Carmen">
+          <h6 class="mt-2 mb-0">Carmen Rosario</h6>
+          <small class="text-muted">Familiar de paciente</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog / Consejos de Salud -->
+<section class="py-5 bg-azul-suave">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between mb-4" data-aos="fade-up">
+      <h2 class="section-title">Consejos de Salud</h2>
+      <a href="#" class="btn btn-outline-verde">Ver todos <i class="fas fa-arrow-right ms-1"></i></a>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card blog-card border-0 p-3 h-100">
+          <i class="fas fa-walking fa-2x mb-2" style="color: var(--azul-medio);"></i>
+          <h5>Estiramientos matutinos</h5>
+          <p class="small">5 ejercicios simples para empezar el día sin rigidez y prevenir lesiones.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card blog-card border-0 p-3 h-100">
+          <i class="fas fa-apple-alt fa-2x mb-2" style="color: var(--azul-medio);"></i>
+          <h5>Nutrición para articulaciones</h5>
+          <p class="small">Alimentos que fortalecen cartílagos y reducen inflamación.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card blog-card border-0 p-3 h-100">
+          <i class="fas fa-bed fa-2x mb-2" style="color: var(--azul-medio);"></i>
+          <h5>Postura al dormir</h5>
+          <p class="small">Consejos para evitar dolores de espalda y cuello al despertar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contacto + Mapa -->
+<section id="contacto" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="section-title d-inline-block">Contacto</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+          <h4 class="mb-3"><i class="fas fa-map-pin me-2" style="color: var(--azul-medio);"></i> Visítanos</h4>
+          <p class="fs-5">Calle Duarte #45, Piedra Blanca, República Dominicana</p>
+          <hr>
+          <p><i class="fas fa-phone-alt me-3" style="color: var(--azul-medio);"></i> +1 809-555-1234</p>
+          <p><i class="fas fa-envelope me-3" style="color: var(--azul-medio);"></i> contacto@rehabimed.com</p>
+          <div class="mt-4">
+            <h5>Síguenos</h5>
+            <div class="mt-3">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a href="https://wa.me/18095551234" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="mt-3 fst-italic small">Síguenos para consejos de salud, ejercicios y recuperación.<br>FB: /RehabiMedRD · IG: @rehabimedrd · TikTok: @rehabimed</p>
+          </div>
+          <div class="map-container mt-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30244.29449356947!2d-70.3822989445801!3d18.84628745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eafd94c1d2e5a3b%3A0x3a5e5b6f6f8b8e8!2sPiedra%20Blanca%2C%20Rep%C3%BAblica%20Dominicana!5e0!3m2!1ses!2sdo!4v1690000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Piedra Blanca"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="bg-white p-4 p-xl-5 rounded-4 shadow-sm">
+          <h4 class="mb-4">Envíanos un mensaje</h4>
+          <form id="contactForm">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" placeholder="Nombre completo" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="email" class="form-control" placeholder="Correo electrónico" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" placeholder="Teléfono">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="3" placeholder="Mensaje" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-rehabimed w-100 py-3">Enviar mensaje</button>
+          </form>
+          <div id="contactSuccess" class="alert alert-success mt-3 rounded-pill d-none" role="alert">¡Mensaje enviado! Te contactaremos pronto.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Citas Online -->
+<section id="citas" class="py-5 bg-verde-suave">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8" data-aos="zoom-in">
+        <div class="bg-white p-5 rounded-5 shadow">
+          <h2 class="section-title mb-4">Solicita tu cita online</h2>
+          <form id="appointmentForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Nombre completo</label>
+                <input type="text" class="form-control" placeholder="Ej. Juan Pérez" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Teléfono</label>
+                <input type="tel" class="form-control" placeholder="809-555-1234" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Fecha preferida</label>
+                <input type="date" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Servicio</label>
+                <select class="form-select" required>
+                  <option selected disabled>Selecciona...</option>
+                  <option>Terapia física</option>
+                  <option>Rehabilitación deportiva</option>
+                  <option>Terapia ocupacional</option>
+                  <option>Masajes terapéuticos</option>
+                  <option>Atención postoperatoria</option>
+                  <option>Valoración funcional</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Mensaje opcional</label>
+                <textarea class="form-control" rows="2" placeholder="Comentarios adicionales..."></textarea>
+              </div>
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-rehabimed btn-lg w-100">Confirmar cita</button>
+              </div>
+            </div>
+          </form>
+          <div id="appointmentSuccess" class="alert alert-success mt-4 rounded-pill d-none">¡Cita solicitada! Nos comunicaremos para confirmar.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+      <div class="col-md-4">
+        <h3 class="text-white"><i class="fas fa-heartbeat me-2"></i>RehabiMed <span style="font-weight:300;">· Centro Integral</span></h3>
+        <p class="small opacity-75">Rehabilitar · Mover · Vivir<br>Tu bienestar, nuestra misión</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <p class="mb-2">Síguenos en redes:</p>
+        <div>
+          <a href="#" class="social-icon bg-white bg-opacity-10 text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon bg-white bg-opacity-10 text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon bg-white bg-opacity-10 text-white"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/18095551234" class="social-icon bg-white bg-opacity-10 text-white"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="small mt-3">facebook.com/RehabiMedRD<br>@rehabimedrd · @rehabimed</p>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <p class="small">© 2025 RehabiMed<br>Piedra Blanca, República Dominicana</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/18095551234?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20rehabilitaci%C3%B3n" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 80 });
+  
+  // Manejo de formularios
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('contactSuccess').classList.remove('d-none');
+    this.reset();
+    setTimeout(() => document.getElementById('contactSuccess').classList.add('d-none'), 4000);
+  });
+  document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('appointmentSuccess').classList.remove('d-none');
+    this.reset();
+    setTimeout(() => document.getElementById('appointmentSuccess').classList.add('d-none'), 5000);
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('.nav-link, .navbar-brand, .btn[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if(target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
